@@ -1,2 +1,3 @@
 # Exercism_io
-Codes of all exercise given in http://exercism.io/
+1. Codes of all exercise given in http://exercism.io/
+2. 
