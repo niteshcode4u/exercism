@@ -1,0 +1,24 @@
+name: Elixir CI Checks
+
+on:
+  push:
+    branhces: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: elixir:1.14.0-slim
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Check code formatting
+        run: mix format --check-formatted
+
+      - name: Run tests
+        run: mix test
