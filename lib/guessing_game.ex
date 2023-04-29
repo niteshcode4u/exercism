@@ -1,7 +1,6 @@
 defmodule GuessingGame do
-  @spec is_close_number(integer(), integer()) :: boolean()
-  defguard is_close_number(secret_number, guess)
-           when secret_number + 1 === guess or secret_number - 1 === guess
+  defguardp is_close_number(secret_number, guess)
+            when secret_number + 1 === guess or secret_number - 1 === guess
 
   @spec compare(integer(), integer() | atom()) :: String.t()
   def compare(secret_number, guess \\ :no_guess)
